@@ -1,5 +1,5 @@
 // OLED//HUNT service worker: offline app shell, fresh data, Web Push.
-const VERSION = 'oh-v1';
+const VERSION = 'oh-v2';
 const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'chart.js', 'github.js', 'push.js', 'tv3d.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {

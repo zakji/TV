@@ -81,3 +81,22 @@ test('microdata + meta + state fallbacks', () => {
   assert.equal(s[0].price, 4599);
   assert.ok(s[0].lowConfidence);
 });
+
+test('size variants on one page, bundles, aggregator condition, entities', () => {
+  const variants = jsonld({ '@type': 'ProductGroup', name: 'LG OLED evo G6 (2026)', hasVariant: [
+    { '@type': 'Product', name: 'LG OLED83G67LW 83 inch', offers: { price: 4799, priceCurrency: 'EUR' } },
+    { '@type': 'Product', name: 'LG Evo AI 77G67LW - 77 inch', offers: { price: 3499, priceCurrency: 'EUR' } } ] });
+  const v = offersFromPage({ html: variants, url: 'https://www.mediamarkt.nl/nl/product/x.html', seed: { model: 'G6' } });
+  assert.deepEqual(v.map((o) => o.price), [4799]);
+
+  const bundle = jsonld({ '@type': 'Product', name: 'LG OLED 83" G6 (2026) + LG DS95TR', offers: { price: 5389, priceCurrency: 'EUR' } });
+  assert.equal(offersFromPage({ html: bundle, url: 'https://www.coolblue.nl/product/985912/x.html' })[0].bundle, true);
+
+  const agg = jsonld({ '@type': 'Product', name: 'LG OLED83G67LW &#8211; 83” OLED EVO (2026)', offers: { price: 5499, priceCurrency: 'EUR', itemCondition: 'https://schema.org/UsedCondition' } });
+  const a = offersFromPage({ html: agg, url: 'https://www.pricedog.nl/product/x', seed: { aggregator: true } });
+  assert.equal(a[0].condition, 'new');
+  assert.ok(a[0].title.includes('–'));
+
+  const sm = jsonld({ '@type': 'Product', name: '83G45LW', offers: { price: 3199, priceCurrency: 'EUR', seller: { name: 'Smits Arnhem' } } });
+  assert.equal(offersFromPage({ html: sm, url: 'https://www.smitsarnhem.nl/83g45lw' })[0].shop, 'Smits Arnhem');
+});

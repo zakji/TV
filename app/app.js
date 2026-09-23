@@ -198,6 +198,7 @@ function renderDeals() {
       `<span class="badge ${o.condition}">${COND_LABEL[o.condition]}</span>`,
       o.condition === 'new' && o.price === lowest[o.model] ? '<span class="badge hot">LOWEST</span>' : '',
       drop ? `<span class="badge hot">▼ ${eur(o.prevPrice - o.price)}</span>` : '',
+      o.bundle ? '<span class="badge muted">BUNDLE</span>' : '',
       o.aggregator ? '<span class="badge muted">COMPARE</span>' : '',
       o.stale ? '<span class="badge muted">STALE</span>' : '',
       o.inStock === false ? '<span class="badge muted">OUT OF STOCK</span>' : '',

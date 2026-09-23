@@ -2,6 +2,18 @@ import { extractOffers, extractLinks } from './extract.mjs';
 import { fetchSmart, fetchText } from './fetch.mjs';
 import { detectModel, detectCondition, isAccessory, isOtherSize, priceOk, shopFromUrl, parsePrice } from './match.mjs';
 
+const BUNDLE_RE = /\s\+\s|\bbundel|\bbundle|\bset met\b|\binclusief soundbar|\bmet soundbar|\b(DS|S|SG|SC|US)\d{2,3}[A-Z]{1,3}\b/i;
+const AGGREGATOR_RE = /vergelijk|prijs|price|compare|kompas|shopper|beste|knibble|tvpedia|kieskeurig|tweakers|beslist|pricedog|kelkoo|dagaanbieding|supersales/i;
+export const isAggregatorUrl = (u) => { try { return AGGREGATOR_RE.test(new URL(u).hostname); } catch { return false; } };
+
+function decodeEntities(s) {
+  return String(s)
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, ' ')
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+}
+
 const IN_STOCK_RE = /instock|limitedavailability|onlineonly|preorder|backorder/i;
 
 /** Turn a fetched product page into normalized offers. */
@@ -18,19 +30,27 @@ export function offersFromPage({ html, url, seed = {}, shopName, source = 'page'
   const out = [];
   for (const o of offers) {
     if (o.currency && o.currency !== 'EUR') continue;
-    const name = o.name || title;
+    const name = decodeEntities(o.name || title);
     if (o.name && isAccessory(o.name) && !detectModel(o.name)) continue;
-    const condition = seed.condition || detectCondition(`${name} ${url} ${o.seller || ''}`, o.condition);
+    // Variants on one page (e.g. 77" and 83"): each offer must match the model and size itself.
+    const offerModel = detectModel(name);
+    if (isOtherSize(name) && !offerModel) continue;
+    if (offerModel && offerModel !== model) continue;
+    // Price-comparison sites often mislabel itemCondition; only trust keywords there.
+    const condition = seed.condition || detectCondition(`${name} ${url} ${o.seller || ''}`, seed.aggregator ? '' : o.condition);
     if (!priceOk(o.price, condition)) continue;
     let shop = baseShop;
+    const norm = (x) => String(x).toLowerCase().replace(/\.(nl|com|be)\b/g, '').replace(/[^a-z0-9]/g, '');
     if (o.seller && !/^(coolblue|mediamarkt|bol|bol\.com|amazon)/i.test(o.seller) && o.seller.length < 40) {
-      shop = seed.aggregator ? `${o.seller} via ${baseShop}` : o.seller === baseShop ? baseShop : `${o.seller} (${baseShop})`;
+      const same = norm(o.seller).includes(norm(baseShop)) || norm(baseShop).includes(norm(o.seller));
+      shop = seed.aggregator ? `${o.seller} via ${baseShop}` : same ? o.seller : `${o.seller} (${baseShop})`;
     }
     if (seed.aggregator && !o.seller) shop = `${o.aggregate ? 'Laagste' : 'Beste'} via ${baseShop}`;
     out.push({
       model,
       shop,
       title: name.slice(0, 140),
+      bundle: BUNDLE_RE.test(name) || undefined,
       price: Math.round(o.price * 100) / 100,
       oldPrice: oldPrice && oldPrice > o.price * 1.01 && oldPrice < o.price * 1.8 ? oldPrice : null,
       condition,
@@ -100,6 +120,7 @@ export async function scrapeMarktplaats(query) {
   const { body } = await fetchText(api, { accept: 'application/json', headers: { Referer: 'https://www.marktplaats.nl/' } });
   const data = JSON.parse(body);
   const out = [];
+  out.raw = (data.listings || []).length;
   for (const l of data.listings || []) {
     const text = `${l.title} ${l.description || ''}`;
     const model = detectModel(l.title) || detectModel(text);

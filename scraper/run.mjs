@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MODELS, detectModel, isAccessory, shopFromUrl } from './lib/match.mjs';
 import { PRODUCT_PAGES, SEARCH_PAGES, SEARCH_QUERIES, DISCOVERY_QUERIES, DISCOVERY_ALLOW, DISCOVERY_DENY, MARKTPLAATS_QUERIES } from './config.mjs';
-import { scrapeProductPage, scrapeSearch, scrapeMarktplaats, webSearch } from './lib/sources.mjs';
+import { scrapeProductPage, scrapeSearch, scrapeMarktplaats, webSearch, isAggregatorUrl } from './lib/sources.mjs';
 import { closeBrowser, pool } from './lib/fetch.mjs';
 import { buildDailyMessage, sendAll } from './notify.mjs';
 
@@ -61,6 +61,7 @@ async function main() {
       const res = (await fn()) || [];
       s.ok = true;
       s.found += res.length;
+      if (res.raw != null) s.raw = (s.raw || 0) + res.raw;
       offers.push(...res);
       return res;
     } catch (e) {
@@ -117,7 +118,7 @@ async function main() {
     log(`  discovered ${list.length} candidate pages`);
     await pool(list, 4, (url) => {
       visited.add(url.split('?')[0]);
-      const agg = /knibble|tvpedia|vergelijk|kieskeurig|tweakers|beslist|pricerunner|kelkoo/.test(url);
+      const agg = isAggregatorUrl(url);
       return track('Web discovery', 'discovery', () => scrapeProductPage({ url, aggregator: agg, source: 'discovery' }, { noBrowser: true }));
     });
   }
@@ -139,6 +140,14 @@ async function main() {
     if (!byKey.has(k) || byKey.get(k).price > o.price) byKey.set(k, o);
   }
   let merged = [...byKey.values()];
+  // Drop "Shop via Aggregator" entries when the shop itself was scraped directly at (about) the same price.
+  const norm = (x) => String(x).toLowerCase().replace(/\.(nl|com|be)\b/g, '').replace(/[^a-z0-9]/g, '');
+  const direct = merged.filter((o) => !o.aggregator);
+  merged = merged.filter((o) => {
+    if (!o.aggregator) return true;
+    const seller = norm(o.shop.split(' via ')[0]);
+    return !direct.some((d) => d.model === o.model && d.condition === o.condition && Math.abs(d.price - o.price) <= 5 && (seller.includes(norm(d.shop)) || norm(d.shop).includes(seller) || /^(laagste|beste)$/.test(seller)));
+  });
 
   // Carry over recent offers from sources that failed this run (avoids flapping), marked stale.
   const failed = new Set([...sourceStats.values()].filter((s) => !s.ok).map((s) => s.name));
@@ -156,8 +165,8 @@ async function main() {
   for (const m of Object.keys(MODELS)) {
     best[m] = {};
     for (const cond of ['new', 'refurbished', 'used']) {
-      const c = merged.find((o) => o.model === m && o.condition === cond && !o.lowConfidence && !o.stale && !o.aggregator)
-        || merged.find((o) => o.model === m && o.condition === cond && !o.lowConfidence);
+      const ok = (o) => o.model === m && o.condition === cond && !o.lowConfidence && !o.bundle;
+      const c = merged.find((o) => ok(o) && !o.stale && !o.aggregator) || merged.find(ok);
       if (c) best[m][cond] = c;
     }
   }
@@ -210,14 +219,14 @@ async function main() {
     const b = best[m];
     log(`  ${m}: new ${b.new ? '€' + b.new.price + ' @ ' + b.new.shop : '—'} | refurb ${b.refurbished ? '€' + b.refurbished.price : '—'} | used ${b.used ? '€' + b.used.price : '—'}`);
   }
-  for (const s of deals.sources) log(`  [${s.ok ? 'ok' : '××'}] ${s.name}: ${s.found}${s.lastError ? ' (' + s.lastError + ')' : ''}`);
+  for (const s of deals.sources) log(`  [${s.ok ? 'ok' : '××'}] ${s.name}: ${s.found}${s.raw != null ? ` (raw ${s.raw})` : ''}${s.lastError ? ' (' + s.lastError + ')' : ''}`);
 
   // ---------------------------------------------------------------- notify
   if (args.has('--no-notify')) return;
   const alertBelow = Number(process.env.ALERT_BELOW || 0);
   const drops = Object.keys(MODELS)
     .map((m) => best[m].new)
-    .filter((o) => o && (o.price < allTimeLowBefore[o.model] || (alertBelow && o.price <= alertBelow)));
+    .filter((o) => o && ((Number.isFinite(allTimeLowBefore[o.model]) && o.price < allTimeLowBefore[o.model]) || (alertBelow && o.price <= alertBelow)));
   if (TRIGGER === 'schedule' || process.env.FORCE_NOTIFY === 'true') {
     const msg = buildDailyMessage(deals);
     if (drops.length) msg.title = '🔥 ' + msg.title;
@@ -226,8 +235,8 @@ async function main() {
   } else if (drops.length) {
     const d = drops.sort((a, b) => a.price - b.price)[0];
     const msg = {
-      title: `🔥 Prijsdaling ${d.model} 83"`,
-      body: `€${Math.round(d.price).toLocaleString('nl-NL')} bij ${d.shop}${Number.isFinite(allTimeLowBefore[d.model]) ? ` (was laagste €${Math.round(allTimeLowBefore[d.model]).toLocaleString('nl-NL')})` : ''}`,
+      title: `🔥 Price drop: ${d.model} 83"`,
+      body: `€${Math.round(d.price).toLocaleString('nl-NL')} at ${d.shop}${Number.isFinite(allTimeLowBefore[d.model]) ? ` (previous low €${Math.round(allTimeLowBefore[d.model]).toLocaleString('nl-NL')})` : ''}`,
       url: './',
       tag: 'drop-' + d.model,
     };

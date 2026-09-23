@@ -11,14 +11,14 @@ export function buildDailyMessage(deals) {
     const parts = [];
     if (b.new) parts.push(`${eur(b.new.price)} ${b.new.shop}`);
     const second = [b.refurbished, b.used].filter(Boolean).sort((a, c) => a.price - c.price)[0];
-    if (second) parts.push(`2e kans ${eur(second.price)}`);
+    if (second) parts.push(`2nd chance ${eur(second.price)}`);
     if (parts.length) lines.push(`${m}: ${parts.join(' · ')}`);
     const cands = [b.new, second].filter(Boolean);
     for (const c of cands) if (!top || c.price < top.price) top = c;
   }
   return {
-    title: top ? `OLED//HUNT · ${top.model} vanaf ${eur(top.price)}` : 'OLED//HUNT · dagelijkse scan',
-    body: lines.join('\n') || 'Geen prijzen gevonden vandaag. Open de app voor de status per bron.',
+    title: top ? `OLED//HUNT · ${top.model} from ${eur(top.price)}` : 'OLED//HUNT · daily scan',
+    body: lines.join('\n') || 'No prices found today. Open the app to see the status of each source.',
     url: './',
     tag: 'daily',
   };
