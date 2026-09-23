@@ -1,0 +1,190 @@
+{
+ "generatedAt": "2026-09-23T18:19:56.913Z",
+ "trigger": "seed",
+ "repo": "zakji/TV",
+ "push": {
+  "vapidPublicKey": null
+ },
+ "models": {
+  "G4": {
+   "name": "LG OLED evo G4 83\"",
+   "year": 2024,
+   "codes": [
+    "OLED83G45LW",
+    "OLED83G44LW",
+    "OLED83G48LW",
+    "OLED83G4"
+   ]
+  },
+  "G5": {
+   "name": "LG OLED evo G5 83\"",
+   "year": 2025,
+   "codes": [
+    "OLED83G55LW",
+    "OLED83G54LW",
+    "OLED83G56LW",
+    "OLED83G5"
+   ]
+  },
+  "G6": {
+   "name": "LG OLED evo G6 83\"",
+   "year": 2026,
+   "codes": [
+    "OLED83G68LW",
+    "OLED83G67LW",
+    "OLED83G65LW",
+    "OLED83G6"
+   ]
+  }
+ },
+ "best": {
+  "G4": {
+   "new": {
+    "id": "seed-G4-knibblelowest",
+    "model": "G4",
+    "shop": "Knibble (lowest)",
+    "title": "Snapshot from web search (23 Sep 2026): replaced by the first live scan",
+    "price": 4033,
+    "oldPrice": null,
+    "condition": "new",
+    "url": "https://knibble.nl/tv/lg/oled83g45lw-2024",
+    "inStock": null,
+    "source": "seed:websearch",
+    "aggregator": false,
+    "seed": true,
+    "firstSeen": "2026-09-23T18:19:56.913Z",
+    "lastSeen": "2026-09-23T18:19:56.913Z"
+   }
+  },
+  "G5": {
+   "new": {
+    "id": "seed-G5-coolblue",
+    "model": "G5",
+    "shop": "Coolblue",
+    "title": "Snapshot from web search (23 Sep 2026): replaced by the first live scan",
+    "price": 4999,
+    "oldPrice": 5139,
+    "condition": "new",
+    "url": "https://www.coolblue.nl/product/963239/lg-83-oled-evo-g55-4k-2025.html",
+    "inStock": null,
+    "source": "seed:websearch",
+    "aggregator": false,
+    "seed": true,
+    "firstSeen": "2026-09-23T18:19:56.913Z",
+    "lastSeen": "2026-09-23T18:19:56.913Z"
+   }
+  },
+  "G6": {
+   "new": {
+    "id": "seed-G6-plasmavisie",
+    "model": "G6",
+    "shop": "Plasmavisie",
+    "title": "Snapshot from web search (23 Sep 2026): replaced by the first live scan",
+    "price": 4047,
+    "oldPrice": null,
+    "condition": "new",
+    "url": "https://www.plasmavisie.nl/lg-oled83g67lw",
+    "inStock": null,
+    "source": "seed:websearch",
+    "aggregator": false,
+    "seed": true,
+    "firstSeen": "2026-09-23T18:19:56.913Z",
+    "lastSeen": "2026-09-23T18:19:56.913Z"
+   }
+  }
+ },
+ "stats": {},
+ "offers": [
+  {
+   "id": "seed-G4-knibblelowest",
+   "model": "G4",
+   "shop": "Knibble (lowest)",
+   "title": "Snapshot from web search (23 Sep 2026): replaced by the first live scan",
+   "price": 4033,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://knibble.nl/tv/lg/oled83g45lw-2024",
+   "inStock": null,
+   "source": "seed:websearch",
+   "aggregator": false,
+   "seed": true,
+   "firstSeen": "2026-09-23T18:19:56.913Z",
+   "lastSeen": "2026-09-23T18:19:56.913Z"
+  },
+  {
+   "id": "seed-G6-plasmavisie",
+   "model": "G6",
+   "shop": "Plasmavisie",
+   "title": "Snapshot from web search (23 Sep 2026): replaced by the first live scan",
+   "price": 4047,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.plasmavisie.nl/lg-oled83g67lw",
+   "inStock": null,
+   "source": "seed:websearch",
+   "aggregator": false,
+   "seed": true,
+   "firstSeen": "2026-09-23T18:19:56.913Z",
+   "lastSeen": "2026-09-23T18:19:56.913Z"
+  },
+  {
+   "id": "seed-G4-coolblue",
+   "model": "G4",
+   "shop": "Coolblue",
+   "title": "Snapshot from web search (23 Sep 2026): replaced by the first live scan",
+   "price": 4169,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.coolblue.nl/product/946209/lg-oled83g45lw-2024.html",
+   "inStock": null,
+   "source": "seed:websearch",
+   "aggregator": false,
+   "seed": true,
+   "firstSeen": "2026-09-23T18:19:56.913Z",
+   "lastSeen": "2026-09-23T18:19:56.913Z"
+  },
+  {
+   "id": "seed-G5-coolblue",
+   "model": "G5",
+   "shop": "Coolblue",
+   "title": "Snapshot from web search (23 Sep 2026): replaced by the first live scan",
+   "price": 4999,
+   "oldPrice": 5139,
+   "condition": "new",
+   "url": "https://www.coolblue.nl/product/963239/lg-83-oled-evo-g55-4k-2025.html",
+   "inStock": null,
+   "source": "seed:websearch",
+   "aggregator": false,
+   "seed": true,
+   "firstSeen": "2026-09-23T18:19:56.913Z",
+   "lastSeen": "2026-09-23T18:19:56.913Z"
+  },
+  {
+   "id": "seed-G5-mediamarkt",
+   "model": "G5",
+   "shop": "MediaMarkt",
+   "title": "Snapshot from web search (23 Sep 2026): replaced by the first live scan",
+   "price": 5499,
+   "oldPrice": 5799,
+   "condition": "new",
+   "url": "https://www.mediamarkt.nl/nl/product/_lg-oled83g55lwaeu-2025-1880622.html",
+   "inStock": null,
+   "source": "seed:websearch",
+   "aggregator": false,
+   "seed": true,
+   "firstSeen": "2026-09-23T18:19:56.913Z",
+   "lastSeen": "2026-09-23T18:19:56.913Z"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Web search snapshot",
+   "kind": "seed",
+   "ok": true,
+   "found": 5,
+   "errors": 0,
+   "ms": 0,
+   "lastError": null
+  }
+ ]
+}

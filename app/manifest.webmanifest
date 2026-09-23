@@ -1,0 +1,21 @@
+{
+  "name": "OLED//HUNT: LG OLED 83\" deal finder",
+  "short_name": "OLED Hunt",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#05060d",
+  "theme_color": "#05060d",
+  "description": "Best Dutch deals for the LG OLED 83\" G4, G5 and G6: new, tweedekans and used. Daily scan at 12:00.",
+  "categories": ["shopping", "utilities"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Scan now", "url": "./?scan=1", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

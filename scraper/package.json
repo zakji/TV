@@ -1,0 +1,18 @@
+{
+  "name": "oled-hunt-scraper",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "scan": "node run.mjs",
+    "scan:quick": "node run.mjs --quick --no-notify",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "web-push": "^3.6.7"
+  },
+  "optionalDependencies": {
+    "playwright": "^1.55.0"
+  }
+}

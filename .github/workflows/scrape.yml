@@ -1,0 +1,105 @@
+name: Scan deals
+
+on:
+  schedule:
+    # 12:00 Europe/Amsterdam = 10:00 UTC (summer) / 11:00 UTC (winter).
+    # Both fire; the script continues only when it is 12:xx in Amsterdam.
+    - cron: '0 10 * * *'
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+    inputs:
+      notify:
+        description: 'Also send the daily push notification'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      skipped: ${{ steps.run.outputs.skipped }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: scraper/package-lock.json
+
+      - name: Install scraper
+        working-directory: scraper
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+        run: npm ci --no-audit --no-fund
+
+      - name: Prepare headless browser
+        run: |
+          if [ -x /usr/bin/google-chrome ]; then
+            echo "CHROMIUM_PATH=/usr/bin/google-chrome" >> "$GITHUB_ENV"
+          else
+            cd scraper && npx playwright install --with-deps chromium
+          fi
+
+      - name: Scan shops
+        id: run
+        working-directory: scraper
+        env:
+          FORCE_NOTIFY: ${{ inputs.notify }}
+          VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT }}
+          PUSH_SUBSCRIPTIONS: ${{ vars.PUSH_SUBSCRIPTIONS }}
+          NTFY_TOPIC: ${{ vars.NTFY_TOPIC }}
+          ALERT_BELOW: ${{ vars.ALERT_BELOW }}
+          APP_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: node run.mjs
+
+      - name: Commit data
+        if: steps.run.outputs.skipped != 'true'
+        run: |
+          git config user.name "oled-hunt-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "No data changes"; exit 0; fi
+          git commit -m "data: scan $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((i * 3))
+          done
+          exit 1
+
+  deploy:
+    needs: scan
+    if: needs.scan.outputs.skipped != 'true'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/build-site.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

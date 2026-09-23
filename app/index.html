@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OLED//HUNT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Best Dutch deals for the LG OLED 83&quot; G4, G5 and G6: new, tweedekans and used.">
+  <meta name="theme-color" content="#05060d">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OLED Hunt">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-scan" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo glitch" data-text="OLED//HUNT">OLED<i>//</i>HUNT</span>
+      <span class="sub" id="lastScan">loading…</span>
+    </div>
+    <div class="top-actions">
+      <span class="live" id="liveDot" title="Data status"><b></b><span id="liveText">—</span></span>
+      <button class="icon-btn" id="settingsBtn" aria-label="Settings">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="install-hint" id="installHint" hidden>
+      <span>📲 Tap <b>Share</b> → <b>Add to Home Screen</b> to install and get push at 12:00.</span>
+      <button class="x" data-close="installHint" aria-label="Dismiss">✕</button>
+    </div>
+
+    <section class="stage" id="stage" aria-label="Interactive 3D TV">
+      <div class="stage-hud">
+        <span class="chip-mini" id="stageModel">G5 · 2025</span>
+        <span class="hint">drag ⟲ · pinch ⤢ · tap ⇆</span>
+      </div>
+      <div class="stage-fallback" id="stageFallback" hidden></div>
+    </section>
+
+    <nav class="seg" id="modelSeg" role="tablist" aria-label="Model">
+      <button role="tab" data-model="ALL" class="on">ALL</button>
+      <button role="tab" data-model="G4" style="--c:var(--g4)">G4</button>
+      <button role="tab" data-model="G5" style="--c:var(--g5)">G5</button>
+      <button role="tab" data-model="G6" style="--c:var(--g6)">G6</button>
+      <span class="seg-glider" aria-hidden="true"></span>
+    </nav>
+
+    <section class="hero card neon" id="hero" aria-live="polite"></section>
+
+    <section class="tiles" id="tiles"></section>
+
+    <section class="card chart-card">
+      <div class="card-head">
+        <h2>Price history</h2>
+        <div class="pills" id="rangePills">
+          <button data-range="30" class="on">30D</button>
+          <button data-range="90">90D</button>
+          <button data-range="0">ALL</button>
+        </div>
+      </div>
+      <div class="chart" id="chart"></div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <section class="card deals-card">
+      <div class="card-head">
+        <h2>Deals <span class="count" id="dealCount"></span></h2>
+        <select id="sortSel" aria-label="Sort">
+          <option value="price">Price ↑</option>
+          <option value="discount">Discount</option>
+          <option value="new">Newest</option>
+        </select>
+      </div>
+      <div class="chips" id="condChips">
+        <button data-cond="all" class="on">All</button>
+        <button data-cond="new">New</button>
+        <button data-cond="refurbished">2nd chance</button>
+        <button data-cond="used">Used</button>
+      </div>
+      <ul class="deals" id="deals"></ul>
+    </section>
+
+    <section class="card sources-card">
+      <details id="sourcesBox">
+        <summary><h2>Sources</h2><span class="src-dots" id="srcDots"></span><span class="src-sum" id="srcSum"></span></summary>
+        <ul class="sources" id="sources"></ul>
+        <p class="muted small">A red source was blocked or changed its layout this run. The app keeps its offers from the last 72 h, marked <i>stale</i>.</p>
+      </details>
+    </section>
+
+    <footer class="foot muted small">
+      Daily scan 12:00 (Europe/Amsterdam) · free on GitHub Actions · prices incl. VAT, check the shop before buying.
+    </footer>
+  </main>
+
+  <button class="scan-fab" id="scanBtn" aria-label="Scan now for deals">
+    <svg class="ring" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/></svg>
+    <span class="scan-ic" aria-hidden="true">⟳</span>
+    <span class="scan-label" id="scanLabel">SCAN</span>
+  </button>
+  <div class="scan-status" id="scanStatus" hidden></div>
+
+  <!-- Settings sheet -->
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <aside class="sheet" id="sheet" aria-hidden="true" aria-label="Settings">
+    <div class="grabber"></div>
+    <div class="sheet-body">
+      <h2>Settings</h2>
+
+      <section class="set-group">
+        <h3>🔔 Push notifications</h3>
+        <p class="muted small" id="pushState">—</p>
+        <div class="row">
+          <button class="btn primary" id="pushBtn">Enable push</button>
+          <button class="btn" id="testPushBtn">Send test</button>
+        </div>
+        <label class="field">
+          <span>Extra alert when a new price is below</span>
+          <div class="inline"><b>€</b><input id="alertBelow" inputmode="numeric" pattern="[0-9]*" placeholder="e.g. 3800"><button class="btn small" id="saveAlert">Save</button></div>
+        </label>
+        <label class="field">
+          <span>ntfy.sh topic (optional backup channel, free <a href="https://apps.apple.com/app/ntfy/id1625396347" target="_blank" rel="noopener">ntfy app</a>)</span>
+          <div class="inline"><input id="ntfyTopic" placeholder="oledhunt-xxxx" autocapitalize="off" autocomplete="off"><button class="btn small" id="saveNtfy">Save</button></div>
+        </label>
+      </section>
+
+      <section class="set-group">
+        <h3>⚡ GitHub link (live scans)</h3>
+        <p class="muted small">A GitHub token lets the SCAN button start a live scan and lets the app set up push. The token is stored only on this device. <a href="#" id="tokenHelp">How to make one</a></p>
+        <div class="token-help" id="tokenHelpBox" hidden>
+          <ol class="small">
+            <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com → Fine-grained token</a>.</li>
+            <li>Repository access: <b>Only select repositories</b> → this repo.</li>
+            <li>Permissions: <b>Actions</b>, <b>Secrets</b> and <b>Variables</b>: Read &amp; write. <b>Contents</b>: Read.</li>
+            <li>Generate, copy, and paste it below.</li>
+          </ol>
+        </div>
+        <label class="field"><span>Repository (owner/name)</span><input id="repoIn" placeholder="owner/repo" autocapitalize="off" autocomplete="off"></label>
+        <label class="field"><span>Token</span><input id="tokenIn" type="password" placeholder="github_pat_…" autocapitalize="off" autocomplete="off"></label>
+        <div class="row">
+          <button class="btn primary" id="connectBtn">Connect</button>
+          <button class="btn danger" id="forgetBtn">Forget</button>
+        </div>
+        <p class="small" id="ghState"></p>
+      </section>
+
+      <section class="set-group">
+        <h3>📲 Install on iPhone</h3>
+        <ol class="small">
+          <li>Open this page in <b>Safari</b>.</li>
+          <li>Tap <b>Share</b> (□↑) → <b>Add to Home Screen</b>.</li>
+          <li>Open <b>OLED Hunt</b> from your home screen, then enable push here.</li>
+        </ol>
+        <p class="muted small">iOS only allows push in the installed app (iOS 16.4+). The installed app has its own storage, so connect GitHub inside the installed app.</p>
+      </section>
+
+      <section class="set-group">
+        <h3>ℹ️ About</h3>
+        <p class="muted small">Tracks LG OLED83G4x / G5x / G6x at Coolblue, MediaMarkt, bol, Amazon, LG, Expert, EP, BCC, HelloTV, Plasmavisie, Tweakers, Knibble, Marktplaats and more. It also searches the web for shops it doesn't know yet.</p>
+        <button class="btn small" id="resetCache">Clear app cache</button>
+      </section>
+      <button class="btn wide" id="closeSheet">Done</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
