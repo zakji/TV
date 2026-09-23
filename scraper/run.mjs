@@ -93,7 +93,7 @@ async function main() {
   // 2) Shop search pages
   if (!args.has('--quick')) {
     log(`▶ Shop searches (${SEARCH_PAGES.length} shops × ${SEARCH_QUERIES.length} queries)`);
-    const jobs = SEARCH_PAGES.flatMap((cfg) => SEARCH_QUERIES.slice(0, cfg.browser ? 3 : 5).map((q) => ({ cfg, q })));
+    const jobs = SEARCH_PAGES.flatMap((cfg) => SEARCH_QUERIES.slice(0, cfg.browser ? 4 : 5).map((q) => ({ cfg, q })));
     await pool(jobs, 3, ({ cfg, q }) =>
       track(cfg.shop, cfg.aggregator ? 'aggregator' : cfg.condition ? 'second-chance' : 'shop', () => scrapeSearch(cfg, q, { visited })),
     );

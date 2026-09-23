@@ -36,7 +36,8 @@ export const PRODUCT_PAGES = [
 
 // Search pages: product links on the result page that match an 83" G4/G5/G6 are followed.
 // {q} is replaced with each query below.
-export const SEARCH_QUERIES = ['OLED83G4', 'OLED83G5', 'OLED83G6', 'LG OLED 83 G5', 'LG OLED 83 G6'];
+// Full model codes: shop search engines (Tweakers, Coolblue, Amazon) don't match partial codes like "OLED83G4".
+export const SEARCH_QUERIES = ['OLED83G45LW', 'OLED83G55LW', 'OLED83G68LW', 'OLED83G67LW', 'LG OLED 83 G5'];
 
 export const SEARCH_PAGES = [
   { shop: 'Coolblue', url: 'https://www.coolblue.nl/zoeken?query={q}', link: /coolblue\.nl\/product\/\d+/, browser: true },
