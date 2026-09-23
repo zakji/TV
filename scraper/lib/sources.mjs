@@ -94,6 +94,11 @@ export async function scrapeSearch(cfg, query, { maxFollow = 4, visited } = {}) 
   })
     .filter((l) => !visited?.has(l.url.split('?')[0]))
     .slice(0, maxFollow);
+  if (process.env.DEBUG_SOURCES && !links.length) {
+    const t = (body.match(/<title[^>]*>([^<]*)/i) || [])[1] || '';
+    const any = extractLinks(body, finalUrl, (h) => cfg.link.test(h)).slice(0, 3).map((l) => `${l.text.slice(0, 40)} → ${l.url.slice(0, 80)}`);
+    console.log(`    [search] ${cfg.shop} "${query}": 0 matches; ${body.length}b title="${t.trim().slice(0, 60)}" productLinks=${JSON.stringify(any)}`);
+  }
   const all = [];
   for (const l of links) {
     visited?.add(l.url.split('?')[0]);
@@ -121,6 +126,9 @@ export async function scrapeMarktplaats(query) {
   const data = JSON.parse(body);
   const out = [];
   out.raw = (data.listings || []).length;
+  if (process.env.DEBUG_SOURCES)
+    for (const l of (data.listings || []).slice(0, 6))
+      console.log(`    [mp] ${JSON.stringify(l.priceInfo)} ${String(l.title).slice(0, 70)} | model=${detectModel(l.title)}`);
   for (const l of data.listings || []) {
     const text = `${l.title} ${l.description || ''}`;
     const model = detectModel(l.title) || detectModel(text);
@@ -128,7 +136,7 @@ export async function scrapeMarktplaats(query) {
     if (isAccessory(l.title)) continue;
     if (isOtherSize(l.title)) continue;
     const pi = l.priceInfo || {};
-    if (!['FIXED', 'BID_FROM', 'NOTK'].includes(pi.priceType) || !pi.priceCents) continue;
+    if (['SEE_DESCRIPTION', 'RESERVED', 'EXCHANGE', 'FREE', 'ON_REQUEST'].includes(pi.priceType) || !pi.priceCents) continue;
     const price = pi.priceCents / 100;
     if (!priceOk(price, 'used')) continue;
     out.push({

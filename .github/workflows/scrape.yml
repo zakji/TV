@@ -64,6 +64,7 @@ jobs:
           PUSH_SUBSCRIPTIONS: ${{ vars.PUSH_SUBSCRIPTIONS }}
           NTFY_TOPIC: ${{ vars.NTFY_TOPIC }}
           ALERT_BELOW: ${{ vars.ALERT_BELOW }}
+          DEBUG_SOURCES: ${{ vars.DEBUG_SOURCES || '1' }}
           APP_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: node run.mjs
 

@@ -177,12 +177,13 @@ async function main() {
   for (const m of Object.keys(MODELS)) {
     const h = (history[m] ||= []);
     allTimeLowBefore[m] = Math.min(...h.filter((x) => x.d !== today && x.new).map((x) => x.new), Infinity);
-    const entry = h.find((x) => x.d === today) || (h.push({ d: today }), h[h.length - 1]);
-    for (const cond of ['new', 'refurbished', 'used']) {
-      const p = best[m][cond]?.price;
-      if (p != null) entry[cond] = entry[cond] != null ? Math.min(entry[cond], p) : p;
-    }
-    if (best[m].new && entry.new === best[m].new.price) entry.shop = best[m].new.shop;
+    // One point per day: the latest scan of the day wins (so a bad scan heals itself).
+    const idx = h.findIndex((x) => x.d === today);
+    const entry = { d: today };
+    for (const cond of ['new', 'refurbished', 'used']) if (best[m][cond]) entry[cond] = best[m][cond].price;
+    if (best[m].new) entry.shop = best[m].new.shop;
+    if (idx >= 0) h[idx] = entry;
+    else h.push(entry);
     if (Object.keys(entry).length === 1) h.splice(h.indexOf(entry), 1);
     h.sort((a, b) => a.d.localeCompare(b.d));
   }
