@@ -106,13 +106,21 @@ export async function fetchWithBrowser(url, { timeout = 35000, waitFor } = {}) {
   try {
     await page.route('**/*.{png,jpg,jpeg,webp,avif,gif,svg,woff,woff2,mp4}', (r) => r.abort());
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout });
-    for (const sel of CONSENT_SELECTORS) {
-      const b = page.locator(sel).first();
-      if (await b.isVisible({ timeout: 400 }).catch(() => false)) {
-        await b.click({ timeout: 2000 }).catch(() => {});
-        break;
+    // Cookie/privacy walls (e.g. DPG Media Privacy Gate on Tweakers) can live in iframes and redirect after accepting.
+    const gated = () => /privacy|consent|cookie/i.test(page.url());
+    clicked: for (let attempt = 0; attempt < 2; attempt++) {
+      for (const frame of page.frames()) {
+        for (const sel of CONSENT_SELECTORS) {
+          const b = frame.locator(sel).first();
+          if (await b.isVisible({ timeout: 300 }).catch(() => false)) {
+            await b.click({ timeout: 2000 }).catch(() => {});
+            break clicked;
+          }
+        }
       }
+      await page.waitForTimeout(800);
     }
+    if (gated()) await page.waitForURL((u) => !/privacy|consent|cookie/i.test(u.toString()), { timeout: 10000 }).catch(() => {});
     if (waitFor) await page.waitForSelector(waitFor, { timeout: 8000 }).catch(() => {});
     else await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
     const body = await page.content();

@@ -89,8 +89,10 @@ export async function scrapeSearch(cfg, query, { maxFollow = 4, visited } = {}) 
   }
   const links = extractLinks(body, finalUrl, (href, text) => {
     if (!cfg.link.test(href)) return false;
-    const t = `${text} ${decodeURIComponent(href)}`;
-    return !!detectModel(t) && !isAccessory(text);
+    let path = href;
+    try { path = decodeURIComponent(href); } catch {}
+    // Link texts are marketing copy ("tv met golvende standaard"), so check accessories on the URL.
+    return !!detectModel(`${text} ${path}`) && !isAccessory(path);
   })
     .filter((l) => !visited?.has(l.url.split('?')[0]))
     .slice(0, maxFollow);

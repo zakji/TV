@@ -25,6 +25,9 @@ export const PRODUCT_PAGES = [
   { url: 'https://www.ovitshop.nl/product/lg-oled83g45lw-4k-smart-oled-tv-83-inch/', model: 'G4' },
   { url: 'https://www.plasmavisie.nl/lg-oled83g68lw', model: 'G6' },
   { url: 'https://www.plasmavisie.nl/lg-oled83g67lw', model: 'G6' },
+  { url: 'https://www.tvspecialisten.nl/lg-oled83g67lw-2026', model: 'G6' },
+  { url: 'https://www.expert.nl/lg-oled-4k-83g67lw-2026-372662917', model: 'G6' },
+  { url: 'https://www.smitsarnhem.nl/83g45lw', model: 'G4' },
   // ---- Aggregators (lowest price across many shops)
   { url: 'https://knibble.nl/tv/lg/oled83g45lw-2024', model: 'G4', aggregator: true },
   { url: 'https://tvpedia.nl/televisie/lg-oled83g45lw-2024/', model: 'G4', aggregator: true },
@@ -36,17 +39,12 @@ export const PRODUCT_PAGES = [
 export const SEARCH_QUERIES = ['OLED83G4', 'OLED83G5', 'OLED83G6', 'LG OLED 83 G5', 'LG OLED 83 G6'];
 
 export const SEARCH_PAGES = [
-  { shop: 'Coolblue', url: 'https://www.coolblue.nl/zoeken?query={q}', link: /coolblue\.nl\/product\/\d+/ },
-  { shop: 'Coolblue Tweedekans', url: 'https://www.coolblue.nl/tweedekans?query={q}', link: /coolblue\.nl\/(tweedekans|product)\//, condition: 'refurbished' },
+  { shop: 'Coolblue', url: 'https://www.coolblue.nl/zoeken?query={q}', link: /coolblue\.nl\/product\/\d+/, browser: true },
+  { shop: 'Coolblue Tweedekans', url: 'https://www.coolblue.nl/tweedekans?query={q}', link: /coolblue\.nl\/(tweedekans|product)\//, condition: 'refurbished', browser: true },
   { shop: 'MediaMarkt', url: 'https://www.mediamarkt.nl/nl/search.html?query={q}', link: /mediamarkt\.nl\/nl\/product\//, browser: true },
-  { shop: 'bol', url: 'https://www.bol.com/nl/nl/s/?searchtext={q}', link: /bol\.com\/nl\/nl\/p\//, browser: true },
-  { shop: 'Amazon.nl', url: 'https://www.amazon.nl/s?k={q}', link: /amazon\.nl\/.*\/dp\/[A-Z0-9]{10}/, browser: true },
-  { shop: 'Expert', url: 'https://www.expert.nl/zoeken?q={q}', link: /expert\.nl\/.+/ },
-  { shop: 'EP', url: 'https://www.ep.nl/zoeken/?q={q}', link: /ep\.nl\/.+/ },
-  { shop: 'BCC', url: 'https://www.bcc.nl/search?q={q}', link: /bcc\.nl\/.+/ },
-  { shop: 'HelloTV', url: 'https://www.hellotv.nl/zoeken?q={q}', link: /hellotv\.nl\/product\// },
+  { shop: 'Amazon.nl', url: 'https://www.amazon.nl/s?k={q}', link: /amazon\.nl\/(?:.*\/)?dp\/[A-Z0-9]{10}/, browser: true },
+  { shop: 'BCC', url: 'https://www.bcc.nl/search?q={q}', link: /bcc\.nl\/.+/, browser: true },
   { shop: 'Tweakers', url: 'https://tweakers.net/pricewatch/zoeken/?keyword={q}', link: /tweakers\.net\/pricewatch\/\d+\//, browser: true, aggregator: true },
-  { shop: 'Kieskeurig', url: 'https://www.kieskeurig.nl/search?q={q}', link: /kieskeurig\.nl\/.+\/product\//, aggregator: true },
 ];
 
 // Web discovery. Every result URL on an allowed (Dutch) domain is fetched and parsed.
@@ -64,4 +62,4 @@ export const DISCOVERY_DENY =
   /(youtube|reddit|facebook|instagram|twitter|x\.com|wikipedia|rtings|lg\.com\/(?!nl)|\.co\.uk|\.de\/|\.fr\/|\.be\/fr|forum|review|nieuws|news|kitele|slickdeals|ebay\.(?!nl))/i;
 
 // Marktplaats (2nd-hand). Public JSON API used by their own site.
-export const MARKTPLAATS_QUERIES = ['lg oled 83 g4', 'lg oled 83 g5', 'lg oled 83 g6', 'oled83g4', 'oled83g5', 'oled83g6'];
+export const MARKTPLAATS_QUERIES = ['lg oled 83 g4', 'lg oled 83 g5', 'lg oled 83 g6', 'oled83g4', 'oled83g5', 'oled83g6', 'lg oled 83 inch', 'lg 83g5', 'lg 83g4'];

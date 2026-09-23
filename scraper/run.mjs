@@ -73,8 +73,18 @@ async function main() {
     }
   };
 
+  // Pages found by web discovery in earlier runs are re-checked every scan (expire after 14 days without a hit).
+  const discovered = await readJson(path.join(DATA, 'discovered.json'), []);
+  const hits = new Map(discovered.map((d) => [d.url, d]));
+  const learned = discovered.filter((d) => !PRODUCT_PAGES.some((p) => p.url === d.url));
+
   // 1) Known product pages
-  log(`▶ Product pages (${PRODUCT_PAGES.length})`);
+  log(`▶ Product pages (${PRODUCT_PAGES.length} seeds + ${learned.length} learned)`);
+  await pool(learned, 4, async (d) => {
+    visited.add(d.url.split('?')[0]);
+    const res = await track('Web discovery', 'discovery', () => scrapeProductPage({ url: d.url, model: d.model, aggregator: d.aggregator, source: 'discovery' }, { noBrowser: true }));
+    if (res.length) hits.set(d.url, { ...d, lastHit: new Date().toISOString() });
+  });
   await pool(PRODUCT_PAGES, 4, (seed) => {
     visited.add(seed.url.split('?')[0]);
     return track(seed.shop || shopFromUrl(seed.url), seed.aggregator ? 'aggregator' : 'shop', () => scrapeProductPage(seed));
@@ -116,10 +126,11 @@ async function main() {
     });
     const list = [...found].slice(0, 30);
     log(`  discovered ${list.length} candidate pages`);
-    await pool(list, 4, (url) => {
+    await pool(list, 4, async (url) => {
       visited.add(url.split('?')[0]);
       const agg = isAggregatorUrl(url);
-      return track('Web discovery', 'discovery', () => scrapeProductPage({ url, aggregator: agg, source: 'discovery' }, { noBrowser: true }));
+      const res = await track('Web discovery', 'discovery', () => scrapeProductPage({ url, aggregator: agg, source: 'discovery' }, { noBrowser: true }));
+      if (res.length) hits.set(url, { url, model: res[0].model, aggregator: agg, firstHit: hits.get(url)?.firstHit || new Date().toISOString(), lastHit: new Date().toISOString() });
     });
   }
   await closeBrowser();
@@ -215,6 +226,11 @@ async function main() {
   };
   await writeFile(path.join(DATA, 'deals.json'), JSON.stringify(deals, null, 1));
   await writeFile(path.join(DATA, 'history.json'), JSON.stringify(history, null, 1));
+  const keep = [...hits.values()]
+    .filter((d) => d.lastHit && Date.now() - new Date(d.lastHit).getTime() < 14 * 86400e3)
+    .sort((a, b) => b.lastHit.localeCompare(a.lastHit))
+    .slice(0, 60);
+  await writeFile(path.join(DATA, 'discovered.json'), JSON.stringify(keep, null, 1));
   log(`✔ ${merged.length} offers from ${deals.sources.filter((s) => s.ok).length}/${deals.sources.length} sources in ${(deals.durationMs / 1000).toFixed(1)}s`);
   for (const m of Object.keys(MODELS)) {
     const b = best[m];
