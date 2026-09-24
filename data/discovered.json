@@ -1,72 +1,72 @@
 [
  {
-  "url": "https://www.poulissen.nl/products/oled83g67lw",
-  "model": "G6",
-  "aggregator": false,
-  "firstHit": "2026-09-23T18:51:37.880Z",
-  "lastHit": "2026-09-23T18:51:37.880Z"
- },
- {
-  "url": "https://www.pricedog.nl/product/lg/lg-oled83g67lw-83-oled-evo-2026",
-  "model": "G6",
-  "aggregator": true,
-  "firstHit": "2026-09-23T18:51:37.296Z",
-  "lastHit": "2026-09-23T18:51:37.296Z"
- },
- {
-  "url": "https://tvkompas.nl/televisie/lg-oled83g45lw-2024/",
-  "model": "G4",
-  "aggregator": true,
-  "firstHit": "2026-09-23T18:44:18.984Z",
-  "lastHit": "2026-09-23T18:48:30.507Z"
- },
- {
-  "url": "https://bigshopper.nl/product/lg-g6-oled83g68lw-83-inch-4k-oled-2025-smart-tv-3646848484.htm",
-  "model": "G6",
-  "aggregator": true,
-  "firstHit": "2026-09-23T18:44:18.942Z",
-  "lastHit": "2026-09-23T18:48:30.225Z"
- },
- {
-  "url": "https://bestetelevisie.nl/producten/lg-g5-oled83g55lw-83-inch-4k",
-  "model": "G5",
-  "aggregator": true,
-  "firstHit": "2026-09-23T18:44:19.207Z",
-  "lastHit": "2026-09-23T18:48:30.000Z"
- },
- {
-  "url": "https://www.koopvergelijker.nl/product/lg-g5-oled83g55lw-83-inch-4k-oled-evo-max-2025",
-  "model": "G5",
-  "aggregator": true,
-  "firstHit": "2026-09-23T18:44:18.314Z",
-  "lastHit": "2026-09-23T18:48:29.969Z"
- },
- {
-  "url": "https://www.vonburgtv.nl/lg-oled/4436-lg-oled83g67lw-2026-8806096767917.html",
-  "model": "G6",
-  "aggregator": false,
-  "firstHit": "2026-09-23T18:44:21.425Z",
-  "lastHit": "2026-09-23T18:48:29.830Z"
- },
- {
-  "url": "https://www.vergelijk.nl/televisies/lg/83_inch_oled_evo_ai_g6_4k_smart_tv_2026_-_oled83g68lw_1251622331/",
-  "model": "G6",
-  "aggregator": true,
-  "firstHit": "2026-09-23T18:44:19.989Z",
-  "lastHit": "2026-09-23T18:48:29.702Z"
- },
- {
   "url": "https://prijskeuze.nl/producten/lg-g6-oled83g68lw-83-inch-4k-oled-2026-smart-tv/",
   "model": "G6",
   "aggregator": true,
   "firstHit": "2026-09-23T18:44:22.061Z",
-  "lastHit": "2026-09-23T18:48:29.578Z"
+  "lastHit": "2026-09-24T09:28:03.988Z"
  },
  {
   "url": "https://www.kieskeurig.nl/televisie/product/52195855-lg-oled83g67lw-211-m-83-4k-ultra-hd-smart-tv-wifi-zwart",
   "model": "G6",
   "aggregator": true,
   "firstHit": "2026-09-23T18:44:20.907Z",
-  "lastHit": "2026-09-23T18:48:28.951Z"
+  "lastHit": "2026-09-24T09:28:01.411Z"
+ },
+ {
+  "url": "https://www.vonburgtv.nl/lg-oled/4436-lg-oled83g67lw-2026-8806096767917.html",
+  "model": "G6",
+  "aggregator": false,
+  "firstHit": "2026-09-23T18:44:21.425Z",
+  "lastHit": "2026-09-24T09:28:01.035Z"
+ },
+ {
+  "url": "https://bestetelevisie.nl/producten/lg-g5-oled83g55lw-83-inch-4k",
+  "model": "G5",
+  "aggregator": true,
+  "firstHit": "2026-09-23T18:44:19.207Z",
+  "lastHit": "2026-09-24T09:28:00.893Z"
+ },
+ {
+  "url": "https://www.vergelijk.nl/televisies/lg/83_inch_oled_evo_ai_g6_4k_smart_tv_2026_-_oled83g68lw_1251622331/",
+  "model": "G6",
+  "aggregator": true,
+  "firstHit": "2026-09-23T18:44:19.989Z",
+  "lastHit": "2026-09-24T09:28:00.855Z"
+ },
+ {
+  "url": "https://www.koopvergelijker.nl/product/lg-g5-oled83g55lw-83-inch-4k-oled-evo-max-2025",
+  "model": "G5",
+  "aggregator": true,
+  "firstHit": "2026-09-23T18:44:18.314Z",
+  "lastHit": "2026-09-24T09:28:00.257Z"
+ },
+ {
+  "url": "https://www.poulissen.nl/products/oled83g67lw",
+  "model": "G6",
+  "aggregator": false,
+  "firstHit": "2026-09-23T18:51:37.880Z",
+  "lastHit": "2026-09-24T09:28:00.101Z"
+ },
+ {
+  "url": "https://www.pricedog.nl/product/lg/lg-oled83g67lw-83-oled-evo-2026",
+  "model": "G6",
+  "aggregator": true,
+  "firstHit": "2026-09-23T18:51:37.296Z",
+  "lastHit": "2026-09-24T09:28:00.034Z"
+ },
+ {
+  "url": "https://tvkompas.nl/televisie/lg-oled83g45lw-2024/",
+  "model": "G4",
+  "aggregator": true,
+  "firstHit": "2026-09-23T18:44:18.984Z",
+  "lastHit": "2026-09-24T09:28:00.012Z"
+ },
+ {
+  "url": "https://bigshopper.nl/product/lg-g6-oled83g68lw-83-inch-4k-oled-2025-smart-tv-3646848484.htm",
+  "model": "G6",
+  "aggregator": true,
+  "firstHit": "2026-09-23T18:44:18.942Z",
+  "lastHit": "2026-09-24T09:27:59.965Z"
  }
 ]
