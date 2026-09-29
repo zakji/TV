@@ -29,6 +29,11 @@
    "d": "2026-09-28",
    "new": 3199,
    "shop": "Smits Arnhem"
+  },
+  {
+   "d": "2026-09-29",
+   "new": 3199,
+   "shop": "Smits Arnhem"
   }
  ],
  "G5": [
@@ -61,6 +66,11 @@
    "d": "2026-09-28",
    "new": 3699,
    "shop": "Coolblue"
+  },
+  {
+   "d": "2026-09-29",
+   "new": 3699,
+   "shop": "Coolblue"
   }
  ],
  "G6": [
@@ -91,6 +101,11 @@
   },
   {
    "d": "2026-09-28",
+   "new": 3949,
+   "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-09-29",
    "new": 3949,
    "shop": "TVSpecialisten"
   }
