@@ -145,6 +145,12 @@
    "new": 3299,
    "used": 2395,
    "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-10-21",
+   "new": 3299,
+   "used": 2395,
+   "shop": "TVSpecialisten"
   }
  ],
  "G5": [
@@ -291,6 +297,11 @@
    "d": "2026-10-20",
    "new": 3161.6,
    "shop": "Triple J Online"
+  },
+  {
+   "d": "2026-10-21",
+   "new": 3161.6,
+   "shop": "Triple J Online"
   }
  ],
  "G6": [
@@ -431,6 +442,11 @@
   },
   {
    "d": "2026-10-20",
+   "new": 3899,
+   "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-10-21",
    "new": 3899,
    "shop": "TVSpecialisten"
   }
