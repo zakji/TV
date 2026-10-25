@@ -169,6 +169,11 @@
    "new": 3299,
    "used": 2395,
    "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-10-25",
+   "new": 3299,
+   "shop": "TVSpecialisten"
   }
  ],
  "G5": [
@@ -336,6 +341,12 @@
    "new": 3699,
    "used": 3161.6,
    "shop": "Coolblue"
+  },
+  {
+   "d": "2026-10-25",
+   "new": 3699,
+   "used": 3161.6,
+   "shop": "Coolblue"
   }
  ],
  "G6": [
@@ -496,6 +507,11 @@
   },
   {
    "d": "2026-10-24",
+   "new": 3899,
+   "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-10-25",
    "new": 3899,
    "shop": "TVSpecialisten"
   }
