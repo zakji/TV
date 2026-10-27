@@ -179,6 +179,11 @@
    "d": "2026-10-26",
    "new": 3299,
    "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-10-27",
+   "new": 3299,
+   "shop": "TVSpecialisten"
   }
  ],
  "G5": [
@@ -358,6 +363,12 @@
    "new": 3699,
    "used": 3161.6,
    "shop": "Coolblue"
+  },
+  {
+   "d": "2026-10-27",
+   "new": 3699,
+   "used": 3161.6,
+   "shop": "Coolblue"
   }
  ],
  "G6": [
@@ -528,6 +539,11 @@
   },
   {
    "d": "2026-10-26",
+   "new": 3998,
+   "shop": "Plasmavisie"
+  },
+  {
+   "d": "2026-10-27",
    "new": 3998,
    "shop": "Plasmavisie"
   }
