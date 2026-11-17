@@ -284,6 +284,11 @@
    "d": "2026-11-16",
    "new": 3299,
    "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-11-17",
+   "new": 3299,
+   "shop": "TVSpecialisten"
   }
  ],
  "G5": [
@@ -600,6 +605,13 @@
    "refurbished": 3399,
    "used": 3161.6,
    "shop": "Hifiklubben"
+  },
+  {
+   "d": "2026-11-17",
+   "new": 2599,
+   "refurbished": 3399,
+   "used": 3161.6,
+   "shop": "Hifiklubben"
   }
  ],
  "G6": [
@@ -875,6 +887,11 @@
   },
   {
    "d": "2026-11-16",
+   "new": 3898,
+   "shop": "Plasmavisie"
+  },
+  {
+   "d": "2026-11-17",
    "new": 3898,
    "shop": "Plasmavisie"
   }
