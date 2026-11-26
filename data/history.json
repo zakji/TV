@@ -329,6 +329,11 @@
    "d": "2026-11-25",
    "new": 3299,
    "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-11-26",
+   "new": 3299,
+   "shop": "TVSpecialisten"
   }
  ],
  "G5": [
@@ -708,6 +713,13 @@
    "refurbished": 3399,
    "used": 3161.6,
    "shop": "Hifiklubben"
+  },
+  {
+   "d": "2026-11-26",
+   "new": 1999,
+   "refurbished": 3399,
+   "used": 3161.6,
+   "shop": "Hifiklubben"
   }
  ],
  "G6": [
@@ -1029,6 +1041,11 @@
   {
    "d": "2026-11-25",
    "new": 3848,
+   "shop": "TVSpecialisten"
+  },
+  {
+   "d": "2026-11-26",
+   "new": 3799,
    "shop": "TVSpecialisten"
   }
  ]
