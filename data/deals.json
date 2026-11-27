@@ -1,11 +1,11 @@
 {
- "generatedAt": "2026-11-26T11:12:54.478Z",
+ "generatedAt": "2026-11-27T11:12:39.055Z",
  "trigger": "schedule",
  "repo": "zakji/TV",
  "push": {
   "vapidPublicKey": null
  },
- "durationMs": 122755,
+ "durationMs": 84541,
  "models": {
   "G4": {
    "name": "LG OLED evo G4 83\"",
@@ -54,7 +54,7 @@
     "lowConfidence": false,
     "id": "fdd6644f67d7",
     "firstSeen": "2026-09-23T18:26:53.390Z",
-    "lastSeen": "2026-11-26T11:12:54.478Z",
+    "lastSeen": "2026-11-27T11:12:39.055Z",
     "prevPrice": null
    }
   },
@@ -73,25 +73,8 @@
     "lowConfidence": false,
     "id": "939274b188d0",
     "firstSeen": "2026-11-16T11:14:09.373Z",
-    "lastSeen": "2026-11-26T11:12:54.478Z",
+    "lastSeen": "2026-11-27T11:12:39.055Z",
     "prevPrice": 2599
-   },
-   "refurbished": {
-    "model": "G5",
-    "shop": "Media Markt Alkmaar",
-    "title": "LG OLED evo AI G5 OLED83G55LW - Ultra HD 4K - OLED evo-tv - 83 inch - 2025",
-    "price": 3399,
-    "oldPrice": null,
-    "condition": "refurbished",
-    "url": "https://www.mediamarkt.nl/nl/product/_lg-oled-evo-ai-oled83g55lw-2025-154831333.html",
-    "inStock": true,
-    "source": "seed:jsonld",
-    "aggregator": false,
-    "lowConfidence": false,
-    "id": "d67f1603e3fe",
-    "firstSeen": "2026-11-06T11:12:40.525Z",
-    "lastSeen": "2026-11-26T11:12:54.478Z",
-    "prevPrice": null
    },
    "used": {
     "model": "G5",
@@ -107,26 +90,26 @@
     "lowConfidence": false,
     "id": "834019dae0db",
     "firstSeen": "2026-10-24T10:03:23.970Z",
-    "lastSeen": "2026-11-26T11:12:54.478Z",
+    "lastSeen": "2026-11-27T11:12:39.055Z",
     "prevPrice": null
    }
   },
   "G6": {
    "new": {
     "model": "G6",
-    "shop": "TVSpecialisten",
-    "title": "LG OLED83G67LW (2026)",
-    "price": 3799,
+    "shop": "MaxICT",
+    "title": "LG OLED83G67LW - 83” OLED EVO (2026)",
+    "price": 3748,
     "oldPrice": null,
     "condition": "new",
-    "url": "https://www.tvspecialisten.nl/lg-oled83g67lw-2026",
+    "url": "https://maxict.nl/product/lg-oled83g67lw-83-oled-evo-2026",
     "inStock": null,
-    "source": "seed:microdata",
+    "source": "discovery:jsonld",
     "aggregator": false,
     "lowConfidence": false,
-    "id": "951f38c6870d",
-    "firstSeen": "2026-09-23T18:26:53.390Z",
-    "lastSeen": "2026-11-26T11:12:54.478Z",
+    "id": "0fb1656e457e",
+    "firstSeen": "2026-11-07T11:10:56.531Z",
+    "lastSeen": "2026-11-27T11:12:39.055Z",
     "prevPrice": 3848
    }
   }
@@ -136,19 +119,19 @@
    "allTimeLow": 3199,
    "allTimeHigh": 3299,
    "changeVsPrev": 0,
-   "offerCount": 8
+   "offerCount": 7
   },
   "G5": {
    "allTimeLow": 1999,
    "allTimeHigh": 3699,
    "changeVsPrev": 0,
-   "offerCount": 13
+   "offerCount": 11
   },
   "G6": {
-   "allTimeLow": 3799,
+   "allTimeLow": 3748,
    "allTimeHigh": 3998,
-   "changeVsPrev": -49,
-   "offerCount": 22
+   "changeVsPrev": -51,
+   "offerCount": 23
   }
  },
  "offers": [
@@ -166,7 +149,7 @@
    "lowConfidence": false,
    "id": "939274b188d0",
    "firstSeen": "2026-11-16T11:14:09.373Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": 2599
   },
   {
@@ -183,7 +166,7 @@
    "lowConfidence": false,
    "id": "834019dae0db",
    "firstSeen": "2026-10-24T10:03:23.970Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -200,24 +183,7 @@
    "lowConfidence": false,
    "id": "fdd6644f67d7",
    "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": null
-  },
-  {
-   "model": "G5",
-   "shop": "Media Markt Alkmaar",
-   "title": "LG OLED evo AI G5 OLED83G55LW - Ultra HD 4K - OLED evo-tv - 83 inch - 2025",
-   "price": 3399,
-   "oldPrice": null,
-   "condition": "refurbished",
-   "url": "https://www.mediamarkt.nl/nl/product/_lg-oled-evo-ai-oled83g55lw-2025-154831333.html",
-   "inStock": true,
-   "source": "seed:jsonld",
-   "aggregator": false,
-   "lowConfidence": false,
-   "id": "d67f1603e3fe",
-   "firstSeen": "2026-11-06T11:12:40.525Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -234,7 +200,7 @@
    "lowConfidence": false,
    "id": "3f32ff6e6f98",
    "firstSeen": "2026-11-21T11:11:25.121Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -251,7 +217,7 @@
    "lowConfidence": false,
    "id": "945b4b147595",
    "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": 3997
   },
   {
@@ -268,7 +234,7 @@
    "lowConfidence": false,
    "id": "96b9171c905b",
    "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": 3492
   },
   {
@@ -285,58 +251,24 @@
    "lowConfidence": false,
    "id": "691d47b321d0",
    "firstSeen": "2026-10-27T11:18:27.740Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
    "model": "G5",
-   "shop": "Kieskeurig",
-   "title": "LG 83G55LW / OLED / 83 inch / 2025",
+   "shop": "TVSpecialisten",
+   "title": "LG OLED83G55LW (2025)",
    "price": 3499,
    "oldPrice": null,
    "condition": "new",
-   "url": "https://www.kieskeurig.nl/televisie/product/51629995-lg-83g55lw-oled-83-inch-2025",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": true,
+   "url": "https://www.tvspecialisten.nl/lg-oled83g55lw-2025",
+   "inStock": null,
+   "source": "discovery:microdata",
+   "aggregator": false,
    "lowConfidence": false,
-   "id": "9c60fda25f3f",
+   "id": "8dbea990061b",
    "firstSeen": "2026-11-14T11:11:01.543Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": null
-  },
-  {
-   "model": "G5",
-   "shop": "Koopvergelijker",
-   "title": "LG G5 OLED83G55LW - 83 inch - 4K OLED Evo Max - 2025",
-   "price": 3499,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://www.koopvergelijker.nl/product/lg-g5-oled83g55lw-83-inch-4k-oled-evo-max-2025",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": true,
-   "lowConfidence": false,
-   "id": "00b28c323e47",
-   "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": null
-  },
-  {
-   "model": "G5",
-   "shop": "Elektro Centrum via Uwbestekoop",
-   "title": "LG OLED evo G5 83 inch 4K OLED (2025)",
-   "price": 3499,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://uwbestekoop.nl/product/lg-oled-evo-g5-83-inch-4k-oled-2025/",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": true,
-   "lowConfidence": false,
-   "id": "681ad0bea258",
-   "firstSeen": "2026-11-15T11:11:00.282Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -353,24 +285,41 @@
    "lowConfidence": false,
    "id": "490638186ae2",
    "firstSeen": "2026-09-23T18:33:14.843Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": 3549
   },
   {
    "model": "G5",
-   "shop": "TVSpecialisten",
-   "title": "LG OLED83G55LW (2025)",
+   "shop": "Koopvergelijker",
+   "title": "LG G5 OLED83G55LW - 83 inch - 4K OLED Evo Max - 2025",
    "price": 3499,
    "oldPrice": null,
    "condition": "new",
-   "url": "https://www.tvspecialisten.nl/lg-oled83g55lw-2025",
-   "inStock": null,
-   "source": "discovery:microdata",
-   "aggregator": false,
+   "url": "https://www.koopvergelijker.nl/product/lg-g5-oled83g55lw-83-inch-4k-oled-evo-max-2025",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": true,
    "lowConfidence": false,
-   "id": "8dbea990061b",
+   "id": "00b28c323e47",
+   "firstSeen": "2026-09-23T18:26:53.390Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": null
+  },
+  {
+   "model": "G5",
+   "shop": "Kieskeurig",
+   "title": "LG 83G55LW / OLED / 83 inch / 2025",
+   "price": 3499,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.kieskeurig.nl/televisie/product/51629995-lg-83g55lw-oled-83-inch-2025",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": true,
+   "lowConfidence": false,
+   "id": "9c60fda25f3f",
    "firstSeen": "2026-11-14T11:11:01.543Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -387,7 +336,7 @@
    "lowConfidence": false,
    "id": "f94786363cbe",
    "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -404,48 +353,14 @@
    "lowConfidence": false,
    "id": "c6616ffa2711",
    "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": null
-  },
-  {
-   "model": "G6",
-   "shop": "TVSpecialisten",
-   "title": "LG OLED83G67LW (2026)",
-   "price": 3799,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://www.tvspecialisten.nl/lg-oled83g67lw-2026",
-   "inStock": null,
-   "source": "seed:microdata",
-   "aggregator": false,
-   "lowConfidence": false,
-   "id": "951f38c6870d",
-   "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 3848
-  },
-  {
-   "model": "G6",
-   "shop": "Smits Arnhem via Kieskeurig",
-   "title": "LG OLED83G67LW / OLED TV / 83 inch / 2026",
-   "price": 3848,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://www.kieskeurig.nl/televisie/product/52195855-lg-oled83g67lw-211-m-83-4k-ultra-hd-smart-tv-wifi-zwart",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": true,
-   "lowConfidence": false,
-   "id": "b72f008d7714",
-   "firstSeen": "2026-11-26T11:12:54.478Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
    "model": "G6",
    "shop": "MaxICT",
    "title": "LG OLED83G67LW - 83” OLED EVO (2026)",
-   "price": 3848,
+   "price": 3748,
    "oldPrice": null,
    "condition": "new",
    "url": "https://maxict.nl/product/lg-oled83g67lw-83-oled-evo-2026",
@@ -455,14 +370,31 @@
    "lowConfidence": false,
    "id": "0fb1656e457e",
    "firstSeen": "2026-11-07T11:10:56.531Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 3899
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": 3848
+  },
+  {
+   "model": "G6",
+   "shop": "Plasmavisie",
+   "title": "LG OLED83G6 LW",
+   "price": 3748,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.plasmavisie.nl/lg-oled83g67lw",
+   "inStock": true,
+   "source": "seed:microdata",
+   "aggregator": false,
+   "lowConfidence": false,
+   "id": "a154582b518f",
+   "firstSeen": "2026-11-27T11:12:39.055Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": null
   },
   {
    "model": "G6",
    "shop": "BCC",
    "title": "LG OLED83G67LW - 83” OLED EVO (2026)",
-   "price": 3848,
+   "price": 3748,
    "oldPrice": null,
    "condition": "new",
    "url": "https://www.bcc.nl/product/lg-oled83g67lw-83-oled-evo-2026",
@@ -472,59 +404,25 @@
    "lowConfidence": false,
    "id": "bcb78803208f",
    "firstSeen": "2026-10-27T11:18:27.740Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 3899
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": 3848
   },
   {
    "model": "G6",
-   "shop": "Plasmavisie",
-   "title": "LG OLED83G6 LW",
-   "price": 3898,
+   "shop": "TVSpecialisten",
+   "title": "LG OLED83G67LW (2026)",
+   "price": 3779,
    "oldPrice": null,
    "condition": "new",
-   "url": "https://www.plasmavisie.nl/lg-oled83g68lw",
-   "inStock": true,
+   "url": "https://www.tvspecialisten.nl/lg-oled83g67lw-2026",
+   "inStock": null,
    "source": "seed:microdata",
    "aggregator": false,
    "lowConfidence": false,
-   "id": "8f167db3aca7",
-   "firstSeen": "2026-11-23T11:12:05.955Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": null
-  },
-  {
-   "model": "G6",
-   "shop": "Kieskeurig",
-   "title": "LG OLED83G67LW / OLED TV / 83 inch / 2026",
-   "price": 3899,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://www.kieskeurig.nl/televisie/product/52195855-lg-oled83g67lw-211-m-83-4k-ultra-hd-smart-tv-wifi-zwart",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": true,
-   "lowConfidence": false,
-   "id": "2b9cef9f1419",
-   "firstSeen": "2026-10-02T10:03:02.603Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 4149
-  },
-  {
-   "model": "G6",
-   "shop": "Productvraag",
-   "title": "LG G6 OLED83G67LW - 83 inch - 4K OLED - 2026 - Smart TV",
-   "price": 3899,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://productvraag.nl/api/go/4d54a18d-2062-45a5-a308-402ac17aed14",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": false,
-   "lowConfidence": false,
-   "id": "4fb696ce9f25",
-   "firstSeen": "2026-11-20T11:13:12.528Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": null
+   "id": "951f38c6870d",
+   "firstSeen": "2026-09-23T18:26:53.390Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": 3799
   },
   {
    "model": "G6",
@@ -540,25 +438,59 @@
    "lowConfidence": false,
    "id": "61d084920789",
    "firstSeen": "2026-11-06T11:12:40.525Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
    "model": "G6",
-   "shop": "LG via Vergelijk.nl",
-   "title": "LG 83 inch OLED evo AI G6 4K Smart TV 2026 & DSG10TY 3.1 kanaal - OLED83G68LW.DSG10TY",
-   "price": 4199,
+   "shop": "Productvraag",
+   "title": "LG G6 OLED83G67LW - 83 inch - 4K OLED - 2026 - Smart TV",
+   "price": 3899,
    "oldPrice": null,
    "condition": "new",
-   "url": "https://www.vergelijk.nl/televisies/lg/83_inch_oled_evo_ai_g6_4k_smart_tv_2026_dsg10ty_3_1_kanaal_-_oled83g68lw_dsg10ty_1292871204/",
+   "url": "https://productvraag.nl/api/go/4d54a18d-2062-45a5-a308-402ac17aed14",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": false,
+   "lowConfidence": false,
+   "id": "4fb696ce9f25",
+   "firstSeen": "2026-11-20T11:13:12.528Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": null
+  },
+  {
+   "model": "G6",
+   "shop": "Smits Arnhem via Kieskeurig",
+   "title": "LG OLED83G67LW / OLED TV / 83 inch / 2026",
+   "price": 3899,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.kieskeurig.nl/televisie/product/52195855-lg-oled83g67lw-211-m-83-4k-ultra-hd-smart-tv-wifi-zwart",
    "inStock": true,
    "source": "discovery:jsonld",
    "aggregator": true,
    "lowConfidence": false,
-   "id": "29d7e9b10ebd",
-   "firstSeen": "2026-11-08T11:11:02.524Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 5099
+   "id": "b72f008d7714",
+   "firstSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": 3848
+  },
+  {
+   "model": "G6",
+   "shop": "Kieskeurig",
+   "title": "LG OLED83G67LW / OLED TV / 83 inch / 2026",
+   "price": 3899,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.kieskeurig.nl/televisie/product/52195855-lg-oled83g67lw-211-m-83-4k-ultra-hd-smart-tv-wifi-zwart",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": true,
+   "lowConfidence": false,
+   "id": "2b9cef9f1419",
+   "firstSeen": "2026-10-02T10:03:02.603Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": 4149
   },
   {
    "model": "G6",
@@ -574,8 +506,25 @@
    "lowConfidence": false,
    "id": "6f55f7eeed49",
    "firstSeen": "2026-10-01T10:03:17.112Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": 5499
+  },
+  {
+   "model": "G6",
+   "shop": "LG via Vergelijk.nl",
+   "title": "LG 83 inch OLED evo AI G6 4K Smart TV 2026 & DSG10TY 3.1 kanaal - OLED83G68LW.DSG10TY",
+   "price": 4199,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.vergelijk.nl/televisies/lg/83_inch_oled_evo_ai_g6_4k_smart_tv_2026_dsg10ty_3_1_kanaal_-_oled83g68lw_dsg10ty_1292871204/",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": true,
+   "lowConfidence": false,
+   "id": "29d7e9b10ebd",
+   "firstSeen": "2026-11-08T11:11:02.524Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": 5099
   },
   {
    "model": "G6",
@@ -591,7 +540,7 @@
    "lowConfidence": false,
    "id": "0728db0faeb1",
    "firstSeen": "2026-11-01T11:11:13.774Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -608,8 +557,25 @@
    "lowConfidence": false,
    "id": "84bff80efece",
    "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
+  },
+  {
+   "model": "G6",
+   "shop": "HelloTV",
+   "title": "LG OLED83G67LW - 83\" OLED EVO (2026)",
+   "price": 4397,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.hellotv.nl/product/lg-oled83g67lw-83-oled-evo-2026",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": false,
+   "lowConfidence": false,
+   "id": "682c3ab634c9",
+   "firstSeen": "2026-09-30T10:03:26.358Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": 4399
   },
   {
    "model": "G6",
@@ -625,76 +591,25 @@
    "lowConfidence": false,
    "id": "1af90c5c1ef0",
    "firstSeen": "2026-09-23T18:33:14.843Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": 5099
   },
   {
    "model": "G6",
-   "shop": "Poulissen",
-   "title": "OLED83G67LW - Zwart",
+   "shop": "Tvs",
+   "title": "Lg OLED evo G6 83G67LW oled-tv 83 inch zwart",
    "price": 4399,
    "oldPrice": null,
    "condition": "new",
-   "url": "https://www.poulissen.nl/products/oled83g67lw?variant=46760230748335",
-   "inStock": true,
+   "url": "https://www.tvs.nl/product/403973-lg-oled-evo-g6-83g67lw-oled-tv-83-inch-zwart.html",
+   "inStock": null,
    "source": "discovery:jsonld",
    "aggregator": false,
    "lowConfidence": false,
-   "id": "4d10dac6d00b",
-   "firstSeen": "2026-09-23T18:51:38.554Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 4999
-  },
-  {
-   "model": "G6",
-   "shop": "Electroworld.nl via Kieskeurig",
-   "title": "LG OLED83G67LW / OLED TV / 83 inch / 2026",
-   "price": 4399,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://www.kieskeurig.nl/televisie/product/52195855-lg-oled83g67lw-211-m-83-4k-ultra-hd-smart-tv-wifi-zwart",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": true,
-   "lowConfidence": false,
-   "id": "ab6fdc1f8bbf",
-   "firstSeen": "2026-11-06T11:12:40.525Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "id": "1a7a8f1d3456",
+   "firstSeen": "2026-11-27T11:12:39.055Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
-  },
-  {
-   "model": "G6",
-   "shop": "HelloTV",
-   "title": "LG OLED83G67LW - 83\" OLED EVO (2026)",
-   "price": 4399,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://www.hellotv.nl/product/lg-oled83g67lw-83-oled-evo-2026",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": false,
-   "lowConfidence": false,
-   "id": "682c3ab634c9",
-   "firstSeen": "2026-09-30T10:03:26.358Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 4999
-  },
-  {
-   "model": "G6",
-   "shop": "LG Electronics (Onlinehardwareshop)",
-   "title": "83 inch LG OLED evo AI G6 4K Smart TV 2026 - OLED83G68LW",
-   "price": 4399,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://www.onlinehardwareshop.nl/product/19966-83-inch-lg-oled-evo-ai-g6-4k-smart-tv-2026-oled83g68lw",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": false,
-   "lowConfidence": false,
-   "id": "4627b83e03b2",
-   "firstSeen": "2026-11-04T11:13:36.469Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 5099
   },
   {
    "model": "G5",
@@ -710,24 +625,92 @@
    "lowConfidence": false,
    "id": "25a8bba01906",
    "firstSeen": "2026-11-16T11:14:09.373Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
    "model": "G6",
-   "shop": "Tvs",
-   "title": "Lg OLED83G67LW oled-tv 83 inch",
+   "shop": "Expert (Productvraag)",
+   "title": "LG G6 OLED83G67LW - 83 inch - 4K OLED - 2026 - Smart TV",
    "price": 4399,
    "oldPrice": null,
    "condition": "new",
-   "url": "https://www.tvs.nl/product/403973-lg-oled83g67lw-oled-tv-83-inch.html",
+   "url": "https://productvraag.nl/api/go/63c38c3e-18c1-4ff6-89b9-871cf3df0a1a",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": false,
+   "lowConfidence": false,
+   "id": "401faf8b7dfb",
+   "firstSeen": "2026-11-27T11:12:39.055Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": null
+  },
+  {
+   "model": "G6",
+   "shop": "Electroworld.nl via Kieskeurig",
+   "title": "LG OLED83G67LW / OLED TV / 83 inch / 2026",
+   "price": 4399,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.kieskeurig.nl/televisie/product/52195855-lg-oled83g67lw-211-m-83-4k-ultra-hd-smart-tv-wifi-zwart",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": true,
+   "lowConfidence": false,
+   "id": "ab6fdc1f8bbf",
+   "firstSeen": "2026-11-06T11:12:40.525Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": null
+  },
+  {
+   "model": "G6",
+   "shop": "Poulissen",
+   "title": "OLED83G67LW - Zwart",
+   "price": 4399,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.poulissen.nl/products/oled83g67lw?variant=46760230748335",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": false,
+   "lowConfidence": false,
+   "id": "4d10dac6d00b",
+   "firstSeen": "2026-09-23T18:51:38.554Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": 4999
+  },
+  {
+   "model": "G6",
+   "shop": "Vergelijk.nl",
+   "title": "LG OLED EVO 83\" G6 (2026)",
+   "price": 4399,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.vergelijk.nl/televisies/lg/83_inch_oled_evo_ai_g6_4k_smart_tv_2026_-_oled83g68lw_1251622331/",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": true,
+   "lowConfidence": false,
+   "id": "3fc25ba32129",
+   "firstSeen": "2026-11-27T11:12:39.055Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": null
+  },
+  {
+   "model": "G6",
+   "shop": "Allesonlinekopen",
+   "title": "Lg 83G67LW OLED evo televisie 83 inch zwart",
+   "price": 4399,
+   "oldPrice": null,
+   "condition": "new",
+   "url": "https://www.allesonlinekopen.nl/product/403973-lg-83g67lw-oled-evo-televisie-83-inch-zwart.html",
    "inStock": null,
    "source": "discovery:jsonld",
    "aggregator": false,
    "lowConfidence": false,
-   "id": "bb83bb76c31e",
-   "firstSeen": "2026-11-22T11:11:09.953Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "id": "ea2f68e983a9",
+   "firstSeen": "2026-11-27T11:12:39.055Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -738,13 +721,13 @@
    "oldPrice": null,
    "condition": "new",
    "url": "https://www.coolblue.nl/product/977589/lg-oled-evo-83-g6-2026.html",
-   "inStock": false,
+   "inStock": true,
    "source": "seed:jsonld",
    "aggregator": false,
    "lowConfidence": false,
    "id": "f3d6a8d0c8e5",
    "firstSeen": "2026-09-23T18:44:22.207Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": 5199
   },
   {
@@ -761,24 +744,7 @@
    "lowConfidence": false,
    "id": "d1bcf9127923",
    "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 4999
-  },
-  {
-   "model": "G6",
-   "shop": "MediaMarkt",
-   "title": "LG Evo AI 83G67LW - Ultra HD 4K - OLED-tv - 83 inch - 2026",
-   "price": 4399,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://www.mediamarkt.nl/nl/product/_lg-oled-evo-ai-83g67lw-2026-4k-smart-2026-1899020.html",
-   "inStock": true,
-   "source": "search:jsonld",
-   "aggregator": false,
-   "lowConfidence": false,
-   "id": "88711366bea6",
-   "firstSeen": "2026-09-23T18:33:14.843Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": 4999
   },
   {
@@ -795,7 +761,7 @@
    "lowConfidence": false,
    "id": "a4777bfea184",
    "firstSeen": "2026-11-05T11:12:35.331Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -812,7 +778,7 @@
    "lowConfidence": false,
    "id": "d5a09880878e",
    "firstSeen": "2026-11-05T11:12:35.331Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -829,24 +795,7 @@
    "lowConfidence": false,
    "id": "26e8f1794ba3",
    "firstSeen": "2026-10-03T10:03:26.457Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": null
-  },
-  {
-   "model": "G5",
-   "shop": "Bigshopper",
-   "title": "LG OLED EVO 4K 83G55LW TV",
-   "price": 5999,
-   "oldPrice": null,
-   "condition": "new",
-   "url": "https://bigshopper.nl/product/lg-oled-evo-4k-83g55lw-tv-1707533775.htm",
-   "inStock": true,
-   "source": "discovery:jsonld",
-   "aggregator": true,
-   "lowConfidence": false,
-   "id": "6d4ca2166462",
-   "firstSeen": "2026-11-21T11:11:25.121Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
@@ -863,25 +812,25 @@
    "lowConfidence": false,
    "id": "90081cac4597",
    "firstSeen": "2026-10-31T11:11:02.981Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
    "prevPrice": null
   },
   {
-   "model": "G4",
-   "shop": "MediaMarkt",
-   "title": "LG OLED83G45LW.AEU - Ultra HD 4K - OLED-tv - 83 inch - 2024",
-   "price": 6499,
+   "model": "G5",
+   "shop": "Bigshopper",
+   "title": "LG OLED EVO 4K 83G55LW TV",
+   "price": 5999,
    "oldPrice": null,
    "condition": "new",
-   "url": "https://www.mediamarkt.nl/nl/product/_lg-oled83g45lwaeu-2024-1807467.html",
-   "inStock": false,
-   "source": "seed:jsonld",
-   "aggregator": false,
+   "url": "https://bigshopper.nl/product/lg-oled-evo-4k-83g55lw-tv-1707533775.htm",
+   "inStock": true,
+   "source": "discovery:jsonld",
+   "aggregator": true,
    "lowConfidence": false,
-   "id": "d02a307221a2",
-   "firstSeen": "2026-09-23T18:26:53.390Z",
-   "lastSeen": "2026-11-26T11:12:54.478Z",
-   "prevPrice": 3458
+   "id": "6d4ca2166462",
+   "firstSeen": "2026-11-21T11:11:25.121Z",
+   "lastSeen": "2026-11-27T11:12:39.055Z",
+   "prevPrice": null
   }
  ],
  "sources": [
@@ -889,27 +838,18 @@
    "name": "Web discovery",
    "kind": "discovery",
    "ok": true,
-   "found": 36,
-   "errors": 3,
-   "ms": 68826,
-   "lastError": "HTTP 404"
-  },
-  {
-   "name": "MediaMarkt",
-   "kind": "shop",
-   "ok": true,
-   "found": 5,
-   "errors": 0,
-   "ms": 125378,
-   "lastError": null
+   "found": 39,
+   "errors": 4,
+   "ms": 34079,
+   "lastError": "blocked (403)"
   },
   {
    "name": "BCC",
    "kind": "shop",
    "ok": true,
-   "found": 5,
+   "found": 6,
    "errors": 0,
-   "ms": 30027,
+   "ms": 25763,
    "lastError": null
   },
   {
@@ -918,7 +858,7 @@
    "ok": true,
    "found": 3,
    "errors": 0,
-   "ms": 41775,
+   "ms": 38271,
    "lastError": null
   },
   {
@@ -927,7 +867,7 @@
    "ok": true,
    "found": 2,
    "errors": 0,
-   "ms": 1435,
+   "ms": 1089,
    "lastError": null
   },
   {
@@ -936,7 +876,7 @@
    "ok": true,
    "found": 2,
    "errors": 0,
-   "ms": 11693,
+   "ms": 1980,
    "lastError": null
   },
   {
@@ -945,7 +885,7 @@
    "ok": true,
    "found": 2,
    "errors": 0,
-   "ms": 1324,
+   "ms": 1548,
    "lastError": null
   },
   {
@@ -954,7 +894,7 @@
    "ok": true,
    "found": 2,
    "errors": 0,
-   "ms": 1087,
+   "ms": 741,
    "lastError": null
   },
   {
@@ -963,7 +903,7 @@
    "ok": true,
    "found": 1,
    "errors": 0,
-   "ms": 7273,
+   "ms": 3529,
    "lastError": null
   },
   {
@@ -972,7 +912,7 @@
    "ok": true,
    "found": 1,
    "errors": 0,
-   "ms": 1308,
+   "ms": 1392,
    "lastError": null
   },
   {
@@ -981,7 +921,7 @@
    "ok": true,
    "found": 1,
    "errors": 0,
-   "ms": 2968,
+   "ms": 3063,
    "lastError": null
   },
   {
@@ -990,7 +930,16 @@
    "ok": true,
    "found": 1,
    "errors": 0,
-   "ms": 1778,
+   "ms": 1395,
+   "lastError": null
+  },
+  {
+   "name": "MediaMarkt",
+   "kind": "shop",
+   "ok": true,
+   "found": 0,
+   "errors": 0,
+   "ms": 70064,
    "lastError": null
   },
   {
@@ -999,7 +948,7 @@
    "ok": true,
    "found": 0,
    "errors": 0,
-   "ms": 7743,
+   "ms": 17880,
    "lastError": null
   },
   {
@@ -1008,7 +957,7 @@
    "ok": true,
    "found": 0,
    "errors": 0,
-   "ms": 8544,
+   "ms": 2725,
    "lastError": null
   },
   {
@@ -1017,7 +966,7 @@
    "ok": true,
    "found": 0,
    "errors": 0,
-   "ms": 9033,
+   "ms": 7990,
    "lastError": null
   },
   {
@@ -1026,7 +975,7 @@
    "ok": true,
    "found": 0,
    "errors": 0,
-   "ms": 3113,
+   "ms": 2044,
    "lastError": null
   },
   {
@@ -1035,7 +984,7 @@
    "ok": true,
    "found": 0,
    "errors": 0,
-   "ms": 11390,
+   "ms": 11128,
    "lastError": null
   },
   {
@@ -1044,7 +993,7 @@
    "ok": true,
    "found": 0,
    "errors": 0,
-   "ms": 10998,
+   "ms": 9235,
    "lastError": null
   },
   {
@@ -1053,7 +1002,7 @@
    "ok": true,
    "found": 0,
    "errors": 0,
-   "ms": 19080,
+   "ms": 17090,
    "lastError": null
   },
   {
@@ -1062,9 +1011,9 @@
    "ok": true,
    "found": 0,
    "errors": 0,
-   "ms": 4424,
+   "ms": 3472,
    "lastError": null,
-   "raw": 101
+   "raw": 108
   }
  ]
 }
